@@ -1,3 +1,7 @@
+### BASIC ###
+apt update && apt install -y curl man net-tools openssh-server
+
+
 ### ZSH ###
 apt install zsh curl sudo git -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
