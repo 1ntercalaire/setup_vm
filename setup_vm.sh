@@ -1,6 +1,5 @@
 ### BASIC ###
-apt update && apt install -y curl man net-tools openssh-server
-
+apt update && apt install -y curl man net-tools openssh-server python3
 
 ### ZSH ###
 apt install zsh curl sudo git -y
