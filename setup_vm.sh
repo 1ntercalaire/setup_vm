@@ -1,5 +1,5 @@
 ### BASIC ###
-apt update && apt install -y curl man net-tools openssh-server python3
+apt update && apt install -y curl man net-tools openssh-server sudo python3
 
 ### ZSH ###
 apt install zsh curl sudo git -y
@@ -41,3 +41,18 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install vagrant
 vagrant autocomplete install --bash --zsh
+
+
+### XFCE4 ###
+apt-get install xorg xfce4 thunar-volman lightdm --no-install-recommends
+systemctl set-default multi-user.target
+
+
+### VSCODE ###
+sudo apt install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+sudo apt update
+sudo apt install code
