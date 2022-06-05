@@ -44,7 +44,7 @@ vagrant autocomplete install --bash --zsh
 
 
 ### XFCE4 ###
-apt-get install xorg xfce4 thunar-volman lightdm --no-install-recommends
+apt-get install xorg xfce4 thunar-volman lightdm gnome-terminal --no-install-recommends
 systemctl set-default multi-user.target
 
 
