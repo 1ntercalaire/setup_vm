@@ -1,5 +1,6 @@
 ### BASIC ###
-apt update && apt install -y curl man net-tools openssh-server sudo python3
+apt update && apt install -y curl man net-tools openssh-server sudo python3 python3-venv python3-pip
+
 
 ### ZSH ###
 apt install zsh curl sudo git -y
@@ -43,9 +44,24 @@ sudo apt-get update && sudo apt-get install -y vagrant
 vagrant autocomplete install --bash --zsh
 
 
+### PROXMOX ###
+echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
+curl https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -o /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
+apt update && apt full-upgrade -y
+apt install -y proxmox-ve postfix open-iscsi
+
+
+### POWERSHELL ###
+sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
+sudo apt update && sudo apt install -y powershell
+
+
 ### XFCE4 ###
 apt-get install xorg xfce4 thunar-volman lightdm gnome-terminal -y --no-install-recommends
 systemctl set-default multi-user.target
+apt install firefox-esr
 
 
 ### VSCODE ###
@@ -56,3 +72,13 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 rm -f packages.microsoft.gpg
 sudo apt update
 sudo apt install code -y
+
+### FIRACODE ###
+apt update
+apt install fonts-firacode -y
+
+
+### COCKPIT ###
+sudo apt-get update
+sudo apt-get install cockpit -y
+sudo systemctl disable cockpit.socket
