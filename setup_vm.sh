@@ -39,20 +39,20 @@ sudo apt install ansible -y
 ### VAGRANT ###
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install vagrant
+sudo apt-get update && sudo apt-get install -y vagrant
 vagrant autocomplete install --bash --zsh
 
 
 ### XFCE4 ###
-apt-get install xorg xfce4 thunar-volman lightdm gnome-terminal --no-install-recommends
+apt-get install xorg xfce4 thunar-volman lightdm gnome-terminal -y --no-install-recommends
 systemctl set-default multi-user.target
 
 
 ### VSCODE ###
-sudo apt install wget gpg
+sudo apt install wget gpg -y
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 sudo apt update
-sudo apt install code
+sudo apt install code -y
