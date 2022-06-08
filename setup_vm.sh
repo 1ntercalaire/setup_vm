@@ -1,5 +1,5 @@
 ### BASIC ###
-apt update && apt install -y curl man net-tools openssh-server sudo python3 python3-venv python3-pip
+apt update && apt install -y curl man net-tools openssh-server sudo python3 python3-venv python3-pip aptitude
 
 
 ### ZSH ###
@@ -26,7 +26,8 @@ sudo apt-get install -y apt-transport-https ca-certificates curl
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
-sudo apt-get install -y kubectl
+sudo apt-get install -y kubectl kubeadm kubelet
+systemctl disable kubelet.service
 echo $(source <(kubectl completion zsh)) >> ~/.zshrc
 
 
@@ -44,13 +45,6 @@ sudo apt-get update && sudo apt-get install -y vagrant
 vagrant autocomplete install --bash --zsh
 
 
-### PROXMOX ###
-echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
-curl https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -o /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
-apt update && apt full-upgrade -y
-apt install -y proxmox-ve postfix open-iscsi
-
-
 ### POWERSHELL ###
 sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -61,7 +55,7 @@ sudo apt update && sudo apt install -y powershell
 ### XFCE4 ###
 apt-get install xorg xfce4 thunar-volman lightdm gnome-terminal -y --no-install-recommends
 systemctl set-default multi-user.target
-apt install firefox-esr
+apt install firefox-esr -y
 
 
 ### VSCODE ###
@@ -72,6 +66,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 rm -f packages.microsoft.gpg
 sudo apt update
 sudo apt install code -y
+
 
 ### FIRACODE ###
 apt update
