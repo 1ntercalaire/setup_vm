@@ -56,7 +56,7 @@ sudo apt update && sudo apt install -y powershell
 ### XFCE4 ###
 apt-get install xorg xfce4 thunar-volman lightdm gnome-terminal -y --no-install-recommends
 systemctl set-default multi-user.target
-apt install firefox-esr -y
+apt install firefox-esr chromium -y
 
 
 ### VSCODE ###
