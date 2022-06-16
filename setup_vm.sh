@@ -1,5 +1,5 @@
 ### BASIC ###
-apt update && apt install -y curl man net-tools openssh-server sudo python3 python3-venv python3-pip aptitude
+apt update && apt install -y curl man net-tools openssh-server sudo python3 python3-venv python3-pip aptitude tmux
 
 
 ### ZSH ###
