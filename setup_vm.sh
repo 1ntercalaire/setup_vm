@@ -1,5 +1,5 @@
 ### BASIC ###
-apt update && apt install -y curl man net-tools openssh-server sudo python3 python3-venv python3-pip aptitude tmux
+apt update && apt install -y curl man net-tools openssh-server sudo python3 python3-venv python3-pip aptitude tmux tree
 sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 systemctl reload sshd
  
