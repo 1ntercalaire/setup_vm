@@ -9,7 +9,7 @@ apt install zsh curl sudo git -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i "s/robbyrussell/duellj/g" .zshrc
 sed -i "s/plugins=(git)/plugins=(git docker docker-compose vagrant nmap)/g" .zshrc
-sed -i "s!# export PATH=$HOME/bin:/usr/local/bin:$PATH!export PATH=$HOME/bin/:/usr/local/bin/:/usr/sbin/:$PATH!g" .zshrc
+sed -i 's|# export PATH=$HOME/bin:/usr/local/bin:$PATH|export PATH=$HOME/bin/:/usr/local/bin/:/usr/sbin/:$PATH|g' .zshrc
 
 
 ### DOCKER ###
