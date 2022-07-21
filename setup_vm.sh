@@ -21,11 +21,10 @@ sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli container
 
 
 ### DOCKER-COMPOSE ###
-#https://github.com/docker/compose/releases
-
 curl -L https://github.com/docker/compose/releases/download/v2.7.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+#https://github.com/docker/compose/releases
 
 ### KUBECTL ###
 sudo apt-get update
