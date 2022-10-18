@@ -6,10 +6,10 @@ sudo systemctl reload sshd
 
 ### ZSH ###
 sudo apt install zsh curl sudo git -y
-sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo sed -i "s/robbyrussell/duellj/g" .zshrc
-sudo sed -i "s/plugins=(git)/plugins=(git docker docker-compose vagrant nmap)/g" .zshrc
-sudo sed -i 's|# export PATH=$HOME/bin:/usr/local/bin:$PATH|export PATH=$HOME/bin/:/usr/local/bin/:/usr/sbin/:$PATH|g' .zshrc
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sed -i "s/robbyrussell/duellj/g" .zshrc
+sed -i "s/plugins=(git)/plugins=(git docker docker-compose vagrant nmap)/g" .zshrc
+sed -i 's|# export PATH=$HOME/bin:/usr/local/bin:$PATH|export PATH=$HOME/bin/:/usr/local/bin/:/usr/sbin/:$PATH|g' .zshrc
 
 
 ### DOCKER ###
