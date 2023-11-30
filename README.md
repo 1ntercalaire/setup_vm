@@ -78,7 +78,22 @@ sudo ln -s /usr/local/bin/pip`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/l
 
 ### Ansible from pip ###
 ```
-pip install ansible
+pip install --no-warn-script-location ansible 
+source ~/.profile
+mkdir -p /etc/ansible
+sudo touch /etc/ansible/hosts
+mkdir -p ~/.ssh
+touch ~/.ssh/known_hosts
+if [ -f $HOME/.ssh/id_rsa ] | [ -f $HOME/.ssh/id_rsa.pub ]
+then
+ echo "ssh RSA key already exists."
+else
+ echo "ssh RSA key doesn't exist"
+ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
+fi
+
+
+ssh-keyscan -f ~/.ssh/known_hosts 10.0.0.0 | tee -a ~/.ssh/known_hosts
 ```
 
 ### Ansible from APT ###
