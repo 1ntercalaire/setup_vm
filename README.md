@@ -1,11 +1,11 @@
 
-### BASIC ###
+### Basic ###
 ```
 apt update
-apt install -y curl man openssh-server sudo python3 python3-venv python3-pip tmux
+apt install -y curl man openssh-server sudo python3 python3-venv python3-pip
 ```
 
-### ZSH ###
+### Zsh ###
 ```
 sudo apt install zsh curl sudo git -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -15,7 +15,7 @@ sed -i 's|# export PATH=$HOME/bin:/usr/local/bin:$PATH|export PATH=$HOME/bin/:/u
 source ~/.zshrc
 ```
 
-### DOCKER ###
+### Docker ###
 ```
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl gnupg
@@ -29,13 +29,14 @@ sudo usermod -aG docker $USER
 ```
 #https://github.com/docker/compose/releases
 
-### DOCKER-COMPOSE ###
+### Docker-Compose ###
 ```
 sudo curl -L https://github.com/docker/compose/releases/download/v2.23.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+sudo usermod -aG docker $USER
 ```
  
-### GH GITHUB ###
+### GH Github ###
 ```
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
@@ -44,7 +45,7 @@ sudo apt update
 sudo apt install gh -y
 ```
 
-### KUBECTL ###
+### K8s ###
 ```
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -55,7 +56,7 @@ sudo apt-get install -y kubectl kubeadm kubelet
 echo $(source <(kubectl completion zsh)) >> ~/.zshrc
 ```
  
-### PYTHON ###
+### Python ###
 ```
 PYTHON_RELEASE=3.12.0
 sudo apt-get update
@@ -73,11 +74,14 @@ cd -
 
 sudo ln -s /usr/local/bin/python`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/local/bin/python
 sudo ln -s /usr/local/bin/pip`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/local/bin/pip
-
-pip install virtualenv
 ```
- 
-### ANSIBLE ###
+
+### Ansible from pip ###
+```
+pip install ansible
+```
+
+### Ansible from APT ###
 ```
 UBUNTU_CODENAME=jammy
 sudo apt-get update
