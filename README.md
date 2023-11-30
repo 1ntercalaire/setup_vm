@@ -1,12 +1,12 @@
 
 ### BASIC ###
-```
+```bash
 apt update
 apt install -y curl man openssh-server sudo python3 python3-venv python3-pip tmux
  ```
 
 ### ZSH ###
- ```
+ ```console
 sudo apt install zsh curl sudo git -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i "s/robbyrussell/duellj/g" ~/.zshrc
