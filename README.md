@@ -92,8 +92,7 @@ else
  ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
 fi
 
-
-ssh-keyscan -f ~/.ssh/known_hosts 10.0.0.0 | tee -a ~/.ssh/known_hosts
+#ssh-keyscan -f ~/.ssh/known_hosts 10.0.0.0 | tee -a ~/.ssh/known_hosts
 ```
 
 ### Ansible from APT ###
