@@ -82,7 +82,7 @@ pip install --no-warn-script-location ansible
 source ~/.profile
 mkdir -p /etc/ansible
 sudo touch /etc/ansible/hosts
-mkdir -p ~/.ssh
+sudo mkdir -p ~/.ssh
 touch ~/.ssh/known_hosts
 if [ -f $HOME/.ssh/id_rsa ] | [ -f $HOME/.ssh/id_rsa.pub ]
 then
