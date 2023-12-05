@@ -78,6 +78,8 @@ sudo ln -s /usr/local/bin/pip`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/l
 
 ### Ansible from pip ###
 ```
+sudo apt update
+sudo apt install -y openssh-client
 pip install --no-warn-script-location ansible 
 source ~/.profile
 sudo mkdir -p /etc/ansible
