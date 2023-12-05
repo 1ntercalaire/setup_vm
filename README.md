@@ -80,7 +80,7 @@ sudo ln -s /usr/local/bin/pip`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/l
 ```
 pip install --no-warn-script-location ansible 
 source ~/.profile
-mkdir -p /etc/ansible
+sudo mkdir -p /etc/ansible
 sudo touch /etc/ansible/hosts
 sudo mkdir -p ~/.ssh
 touch ~/.ssh/known_hosts
