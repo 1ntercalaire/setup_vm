@@ -58,7 +58,7 @@ echo $(source <(kubectl completion zsh)) >> ~/.zshrc
  
 ### Python ###
 ```
-PYTHON_RELEASE=3.12.0
+PYTHON_RELEASE=3.12.1
 sudo apt-get update
 sudo apt-get install -y curl xz-utils gcc make build-essential gdb lcov pkg-config \
       libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
