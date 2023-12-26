@@ -72,8 +72,8 @@ sudo make -s -j`nproc`
 sudo make install
 cd -
 
-sudo ln -s /usr/local/bin/python`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/local/bin/python
-sudo ln -s /usr/local/bin/pip`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/local/bin/pip
+sudo ln -sf /usr/local/bin/python`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/local/bin/python
+sudo ln -sf /usr/local/bin/pip`echo ${PYTHON_RELEASE} | cut -d '.' -f 1,2` /usr/local/bin/pip
 ```
 
 ### Ansible from pip ###
